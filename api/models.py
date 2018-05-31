@@ -43,5 +43,19 @@ class Sendtotab(models.Model):
     video_id4 = models.CharField(max_length=200)
     video_id5 = models.CharField(max_length=200)
     time = models.DateTimeField(default=timezone.now)
+
+
+
+class advertiser_data(models.Model):
+    
+    customer_id = models.CharField(max_length=200)
+    latitude = models.CharField(max_length=200)
+    longitude = models.CharField(max_length=200)
+    radius = models.CharField(max_length=200)
+    video_id = models.CharField(max_length=200)
+    time = models.DateTimeField(default=timezone.now)
+
+
+
                 
                 
