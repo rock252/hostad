@@ -29,7 +29,7 @@ def home(request):
                 send_mail(subject, message, 'gshivam252@gmail.com', ['udnkhatola@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            messages.success(request, 'submitted successfully')
+            messages.success(request, 'Submitted Successfully')
     return render(request, "udn/home.html", {'form': form})
 
 def service(request):
@@ -100,6 +100,6 @@ def contact(request):
                 send_mail(subject, message, from_email, ['udnkhatola@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            messages.success(request, 'submitted successfully')
+            messages.success(request, 'Submitted Successfully')
     return redirect('/#contact-page')
 
