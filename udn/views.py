@@ -101,6 +101,5 @@ def contact(request):
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             messages.success(request, 'submitted successfully')
-            return redirect('home')
     return redirect('/#contact-page')
 
