@@ -7,6 +7,7 @@ from udn.forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
+from django.contrib import messages
 
 
 
@@ -94,10 +95,12 @@ def contact(request):
             from_email = form.cleaned_data['from_email']
             message = form.cleaned_data['message']
             Name = form.cleaned_data['Name']
+
             try:
                 send_mail(subject, message, from_email, ['udnkhatola@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
+            messages.success(request, 'submitted successfully')
             return redirect('home')
     return redirect('/#contact-page')
 
