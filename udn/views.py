@@ -1,16 +1,11 @@
 from django.shortcuts import render
 from django.shortcuts import render,redirect
 from api.models import *
-from udn.forms import ContactForm
-
-
+from udn.forms import ContactForm, adv
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.contrib import messages
-
-
-
 
 def home(request):
 
@@ -103,3 +98,24 @@ def contact(request):
             messages.success(request, 'Submitted Successfully')
     return redirect('/#contact-page')
 
+
+
+def advertiser_details(request):
+    if request.method == 'POST':
+        obj = advertiser_data()
+        form = adv(request.POST)
+        if form.is_valid():
+            obj.customer_id = form.cleaned_data['customer_id']
+            obj.latitude = form.cleaned_data['latitude']
+            obj.longitude = form.cleaned_data['longitude']
+            obj.radius = form.cleaned_data['radius']
+            obj.video_id = form.cleaned_data['video_id']
+            obj.save()
+            messages.success(request, 'Submitted Successfully')
+
+
+
+        return render(request, "udn/advdetail.html")
+    else:
+        form = adv()
+    return render(request, 'udn/advdetail.html', {'form': form})

@@ -13,6 +13,7 @@ urlpatterns = [
     url( r'^faq/$', views.faq, name='faq' ),
     url( r'^blog/$', views.blog, name='blog' ),
     url( r'^maps/$', views.maps, name='maps' ),
+    url(r'^adv/$',views.advertiser_details,name='adv'),
     
     
 ]
