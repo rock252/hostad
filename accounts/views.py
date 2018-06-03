@@ -3,6 +3,8 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from . forms import *
+from django.contrib.auth import logout
+
 def user_login(request):
     if request.user.is_authenticated():
         return redirect('customer_portal1')
@@ -21,3 +23,8 @@ def user_login(request):
             form = LoginForm()
         return render(request, 'accounts/login.html', {'form': form})
 
+
+def user_logout(request):
+    logout(request)
+    return redirect('home')
+    
