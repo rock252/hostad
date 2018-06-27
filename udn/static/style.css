@@ -374,6 +374,7 @@ input:-webkit-autofill:focus {
 /**
 *Header-area
 **/
+
 video#bgVideo {
   position: absolute; // Play the video in full screen mode
   top: 0px; 
@@ -382,9 +383,11 @@ video#bgVideo {
   min-height: 100%;
   z-index: -1; // Put the video behind all other elements
 }
+
+
 .client-area,
 .header-area {
-    background: #000000 url('images/parallax-2.jpg') no-repeat scroll center center / cover;
+   
 }
 
 .anlge-bg {
