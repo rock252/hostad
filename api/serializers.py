@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from api.models import Information , Sendtotab
+from api.models import *
 
 class postSerializer(serializers.ModelSerializer):
    class Meta:
