@@ -57,5 +57,13 @@ class advertiser_data(models.Model):
 
 
 
+class download(models.Model):
+    
+    city = models.CharField(max_length=200)
+    video_id = models.CharField(max_length=200)
+    time = models.DateTimeField(default=timezone.now)
+
+
+
                 
                 

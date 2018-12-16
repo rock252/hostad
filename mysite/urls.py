@@ -25,5 +25,6 @@ urlpatterns = [
     url(r'^api/', include('api.urls')),
     url(r'^accounts/', include('accounts.urls')),
     url(r'^info/$',views.postList.as_view()),
-    url(r'^info2/$',views.postList2.as_view()),    
+    url(r'^info2/$',views.postList2.as_view()),   
+    url(r'^downloadvideo/$',views.downloadvideo.as_view()), 
 ]

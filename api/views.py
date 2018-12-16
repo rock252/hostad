@@ -243,3 +243,14 @@ class postList2(APIView):
    def post(self):
       pass
 
+
+class downloadvideo(APIView):
+
+   def get(self, request):
+    
+      allpost = download.objects.all()
+      serializer = downloadvideoserializer(allpost, many=True)
+      return Response(serializer.data)
+
+   def post(self):
+      pass
